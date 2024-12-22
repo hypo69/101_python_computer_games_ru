@@ -7,4 +7,4 @@
 чтобы ты мог без труда разобраться в логике написания программы, 
 вдохновиться и начать свои эксперименты.
 
-[Список игр](https://github.com/hypo69/101_basic_python_games/tree/master/GAMES/TOC.MD)
+[Список игр](https://github.com/hypo69/101_python_computer_games_ru/tree/master/GAMES/TOC.MD)
