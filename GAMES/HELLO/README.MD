@@ -63,5 +63,7 @@ flowchart TD
 7. **`DisplayThanks`** – Вывод сообщения о завершении программы.
 8. **`End`** – Конец программы.
 
+Запустить код в [google colab](https://colab.research.google.com/github/hypo69/101_python_computer_games_ru/blob/master/GAMES/HELLO/101bcg_ru_hello.ipynb)
+
 
 
