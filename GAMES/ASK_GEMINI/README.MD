@@ -103,3 +103,4 @@ API ключ от `gemini`: ваш_api_ключ
 ```
 
 
+Запустить код можно [здесь](https://colab.research.google.com/github/hypo69/101_python_computer_games_ru/blob/master/GAMES/ASK_GEMINI/ask_gemini_ru.ipynb)
