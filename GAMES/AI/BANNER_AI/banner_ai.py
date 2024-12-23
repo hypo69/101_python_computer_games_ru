@@ -1,5 +1,12 @@
-import google.generativeai as genai  # Импортируем библиотеку для работы с Gemini
-import re  # Импортируем библиотеку для работы с регулярными выражениями
+import google.generativeai as genai  # Импорт библиотеки для работы с Gemini
+import re  # Импорт библиотеки для работы с регулярными выражениями
+from pathlib import Path
+from header import __root__  # Импорт объекта __root__, содержащего абсолютный путь к корню проекта
+from dotenv import load_dotenv, set_key  # Импорт функции для сохранения переменной в .env
+import os
+
+# Загрузка переменных окружения из файла .env
+load_dotenv()
 
 class GoogleGenerativeAI:
     """
@@ -7,124 +14,90 @@ class GoogleGenerativeAI:
     """
 
     MODELS = [
-        "gemini-1.5-flash-8b",
-        "gemini-2-13b",
-        "gemini-3-20b"
+        'gemini-1.5-flash-8b',
+        'gemini-2-13b',
+        'gemini-3-20b'
     ]
 
-    def __init__(self, api_key: str, system_instruction: str, model_name: str = "gemini-2.0-flash-exp"):
+    def __init__(self, api_key: str, system_instruction: str, model_name: str = 'gemini-2.0-flash-exp'):
         """
         Инициализация модели GoogleGenerativeAI.
 
-        Args:
-            api_key: Ключ API для доступа к Gemini.
-            system_instruction: Инструкция для модели (системный промпт).
-            model_name: Название используемой модели Gemini.
+        :param api_key: Ключ API для доступа к Gemini.
+        :type api_key: str
+        :param system_instruction: Инструкция для модели (системный промпт).
+        :type system_instruction: str
+        :param model_name: Название используемой модели Gemini. По умолчанию 'gemini-2.0-flash-exp'.
+        :type model_name: str
         """
         self.api_key = api_key
         self.model_name = model_name
-        genai.configure(api_key=self.api_key)  # Конфигурируем библиотеку с API ключом
-        self.model = genai.GenerativeModel(model_name=self.model_name, system_instruction=system_instruction)  # Инициализируем модель с инструкцией
+        genai.configure(api_key=self.api_key)  # Конфигурация библиотеки с API ключом
+        self.model = genai.GenerativeModel(model_name=self.model_name, system_instruction=system_instruction)  # Инициализация модели с инструкцией
 
     def ask(self, q: str) -> str:
         """
-        Отправляет запрос модели и возвращает ответ.
+        Отправка запроса модели и получение ответа.
 
-        Args:
-            q: Текст запроса.
-
-        Returns:
-            Ответ модели или сообщение об ошибке.
+        :param q: Текст запроса.
+        :type q: str
+        :return: Ответ модели или сообщение об ошибке.
+        :rtype: str
         """
         try:
-            response = self.model.generate_content(q)  # Отправляем запрос модели
-            return response.text  # Возвращаем текстовый ответ
+            response = self.model.generate_content(q)  # Отправка запроса модели
+            return response.text  # Получение текстового ответа
         except Exception as ex:
-            return f"Error: {str(ex)}"  # Обрабатываем и возвращаем ошибку
+            return f'Error: {str(ex)}'  # Обработка и получение ошибки
 
-# Инструкции для Gemini (системные промпты)
-system_instruction_asterisk = """
-Ты — генератор текстовых баннеров. Твоя задача — создать текстовый баннер из введённого текста.
-
-Правила:
-
-1. Используй символ '*' для оформления баннера.
-2. Верхняя и нижняя границы баннера должны быть оформлены символами '*'.
-3. Текст должен быть окружён рамкой из символов '*'.
-4. Пример оформления:
-   *********
-   * Текст *
-   *********
-5. Не добавляй никаких дополнительных пояснений, просто возвращай оформленный баннер.
-"""
-
-system_instruction_tilde = """
-Ты — генератор текстовых баннеров. Твоя задача — создать текстовый баннер из введённого текста.
-
-Правила:
-
-1. Используй символ '~' для оформления баннера.
-2. Верхняя и нижняя границы баннера должны быть оформлены символами '~'.
-3. Текст должен быть окружён рамкой из символов '~'.
-4. Пример оформления:
-   ~~~~~~~~
-   ~ Текст ~
-   ~~~~~~~~
-5. Не добавляй никаких дополнительных пояснений, просто возвращай оформленный баннер.
-"""
-
-system_instruction_hash = """
-Ты — генератор текстовых баннеров. Твоя задача — создать текстовый баннер из введённого текста.
-
-Правила:
-
-1. Используй символ '#' для оформления баннера.
-2. Верхняя и нижняя границы баннера должны быть оформлены символами '#'.
-3. Текст должен быть окружён рамкой из символов '#'.
-4. Пример оформления:
-   ########
-   # Текст #
-   ########
-5. Не добавляй никаких дополнительных пояснений, просто возвращай оформленный баннер.
-"""
 
 # Основная часть программы
-if __name__ == "__main__":
-    API_KEY: str = input("Введите API ключ от `gemini`: ")  # Запрашиваем API ключ у пользователя
+if __name__ == '__main__':
+    relative_path: Path = Path('GAMES', 'AI', 'BANNER_AI')  # Относительный путь к директории
+    base_path: Path = __root__ / relative_path  # Абсолютный путь к директории с использованием __root__
+
+    # Чтение API ключа из переменных окружения или запрос у пользователя
+    API_KEY: str = os.getenv('API_KEY')
+    if not API_KEY:
+        API_KEY = input('API ключ не найден. Введите API ключ от `gemini`: ')  # Запрос API ключа у пользователя
+        # Сохранение введенного ключа в файл .env
+        set_key('.env', 'API_KEY', API_KEY)
+
+    instructions: dict = {
+        '1': 'system_instruction_asterisk',
+        '2': 'system_instruction_tilde',
+        '3': 'system_instruction_hash',
+    }
 
     # Приветствие пользователя
-    print("Добро пожаловать в игру Banner!")
-    print("Введите текст, и я создам для вас текстовый баннер.")
+    print('Добро пожаловать в игру Banner!')
+    print('Введите текст, и я создам для вас текстовый баннер.')
 
-    # Выбор стиля оформления баннера
-    print("Выберите стиль оформления баннера:")
-    print("1. Символ '*'")
-    print("2. Символ '~'")
-    print("3. Символ '#'")
-    choice = input("Введите номер стиля (1, 2 или 3): ")
+    while True:
+        # Выбор стиля оформления баннера
+        print('Выберите стиль оформления баннера:')
+        print('1. Символ \'*\'')
+        print('2. Символ \'~\'')
+        print('3. Символ \'#\'')
+        choice = input('Введите номер стиля (1, 2 или 3): ')
 
-    # Определяем системную инструкцию в зависимости от выбора пользователя
-    if choice == "1":
-        system_instruction = system_instruction_asterisk
-    elif choice == "2":
-        system_instruction = system_instruction_tilde
-    elif choice == "3":
-        system_instruction = system_instruction_hash
-    else:
-        print("Неверный выбор. Используется стиль по умолчанию '*'.")
-        system_instruction = system_instruction_asterisk
+        if choice in ('1', '2', '3'):
+            system_instruction: str = Path(base_path, 'instructions', f'{instructions[choice]}.md').read_text(encoding='UTF-8')  # Чтение инструкции из файла
+        else:
+            print('Неверный выбор. Используется стиль по умолчанию \'*\'')
+            system_instruction: str = Path(base_path, 'instructions', 'system_instruction_asterisk.md').read_text(encoding='UTF-8')  # Чтение инструкции по умолчанию
 
-    # Создаём экземпляр класса с выбранной инструкцией
-    model = GoogleGenerativeAI(api_key=API_KEY, system_instruction=system_instruction)
+        # Создание экземпляра класса с выбранной инструкцией
+        model: GoogleGenerativeAI = GoogleGenerativeAI(api_key=API_KEY, system_instruction=system_instruction)
 
-    # Запрашиваем у пользователя текст
-    user_text = input("Введите текст для баннера: ")
+        # Запрос текста у пользователя
+        user_text: str = input('Введите текст для баннера: ')
 
-    # Проверяем, что текст не пустой
-    if user_text.strip() == "":
-        print("Вы не ввели текст. Попробуйте снова.")
-    else:
-        # Отправляем текст модели и получаем оформленный баннер
-        response = model.ask(user_text)
-        print("\nВаш баннер готов:")
-        print(response)
+        # Проверка, что текст не пустой
+        if user_text.strip() == '':
+            print('Вы не ввели текст. Попробуйте снова.')
+        else:
+            # Отправка текста модели и получение оформленного баннера
+            response = model.ask(user_text)
+            print('\nВаш баннер готов:')
+            print(response)
