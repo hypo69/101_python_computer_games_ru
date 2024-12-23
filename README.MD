@@ -16,3 +16,5 @@
 
 
 [Список игр](https://github.com/hypo69/101_python_computer_games_ru/tree/master/GAMES/TOC.MD)
+
+[Книга жалоб и предложений](https://github.com/hypo69/101_python_computer_games_ru/issues)
