@@ -2,25 +2,26 @@
 #! venv/Scripts/python.exe
 #! venv/bin/python/python3.12
 
+""" .. module: header
+        sysnposys: установка переменной __root__ (корневой директории проекта)
 
+"""
 import sys
-import json
-from packaging.version import Version
-
 from pathlib import Path
+
 def set_project_root(marker_files=('pyproject.toml', 'requirements.txt', '.git')) -> Path:
     """
-    Finds the root directory of the project starting from the current file's directory,
-    searching upwards and stopping at the first directory containing any of the marker files.
+    Находит корневую директорию проекта, начиная с текущей директории файла,
+    и поднимаясь вверх, пока не найдет один из маркерных файлов.
 
-    Args:
-        marker_files (tuple): Filenames or directory names to identify the project root.
+    Аргументы:
+        marker_files (tuple): Имена файлов или директорий для идентификации корневой директории.
     
-    Returns:
-        Path: Path to the root directory if found, otherwise the directory where the script is located.
+    Возвращает:
+        Path: Путь к корневой директории, если найдена, иначе директория, где находится скрипт.
     """
-    __root__:Path
-    current_path:Path = Path(__file__).resolve().parent
+    __root__: Path
+    current_path: Path = Path(__file__).resolve().parent
     __root__ = current_path
     for parent in [current_path] + list(current_path.parents):
         if any((parent / marker).exists() for marker in marker_files):
@@ -31,7 +32,6 @@ def set_project_root(marker_files=('pyproject.toml', 'requirements.txt', '.git')
     return __root__
 
 
-# Get the root directory of the project
-__root__:Path = set_project_root()
-"""__root__ (Path): Path to the root directory of the project"""
-
+# Получение корневой директории проекта
+__root__: Path = set_project_root()
+"""__root__ (Path): Путь к корневой директории проекта"""
