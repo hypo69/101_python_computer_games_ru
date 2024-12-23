@@ -13,8 +13,10 @@
 Я портирую игры на язык Python. 
 Каждую игру я сопровождаю подробным объяснением, и алгоритмом, чтобы ты смог легко понять, как она работает, 
 и начать экспериментировать. 
+Как тут все устроено:
+в модуле GAMES находится кодовая база игр. Каждая игра находится в отдельном модуле; модуль [GAMES/AI](https://github.com/hypo69/101_python_computer_games_ru/tree/master/GAMES/AI) - сборник игр, портированных для игры с искусственным интелектом
 
 
 [Список игр](https://github.com/hypo69/101_python_computer_games_ru/tree/master/GAMES/TOC.MD)
 
-[Книга жалоб и предложений](https://github.com/hypo69/101_python_computer_games_ru/issues)
+Нашел ошибку? [Пиши сюда](https://github.com/hypo69/101_python_computer_games_ru/issues)
