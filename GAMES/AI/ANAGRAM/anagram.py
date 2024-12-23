@@ -12,7 +12,7 @@ class GoogleGenerativeAI:
         "gemini-3-20b"
     ]
 
-    def __init__(self, api_key: str, system_instruction: str = "", model_name: str = "gemini-2-13b"):
+    def __init__(self, api_key: str, system_instruction: str = "", model_name: str = "gemini-2.0-flash-exp"):
         """
         Инициализация модели GoogleGenerativeAI.
 
