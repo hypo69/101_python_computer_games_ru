@@ -70,3 +70,7 @@ print(greet("Alice"))
 ```
 
 В данном примере функция `greet` определена в одном модуле (`utils.py`), но используется в другом (`main.py`), что улучшает структуру и делает код более модульным и удобным для изменения.
+
+---
+
+  [К оглавлению](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets#readme)

@@ -105,3 +105,7 @@ print(f'{name=}, {age=}')
 
 3. **Логирование**:
    В больших проектах для управления выводом лучше использовать модуль `logging`, но на начальном этапе `print()` помогает быстро выводить данные.
+
+   ---
+
+  [К оглавлению](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets#readme)
