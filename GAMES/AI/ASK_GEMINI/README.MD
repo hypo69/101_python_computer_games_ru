@@ -9,11 +9,7 @@
 
 API КЛЮЧ К МОДЕЛИ ЗДЕСЬ: [https://aistudio.google.com/](https://aistudio.google.com/) 
 
-Можешь воспользоваться моим:  
 
-AIzaSyCprZ9Tr-rB_xFau5zgWsKPM_6W-FmUntk  
-
-Ключ я создал для обучения и понимания кода. Не перегружай модель!
 
 
 ```python

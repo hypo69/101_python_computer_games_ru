@@ -3,14 +3,15 @@
 
 ## Модули
 
-1. **[string.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/string.md)**  
-   Строки в Python
+**[string.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/string.md)** Строки в Python
 
-2. **[variables.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/variables.md)**  
-   Переменные
+**[imports.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/string.md)** Импорты библиотек и модулей
 
-3. **[input.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/input.md)**  
-   Методы получения ввода от пользователя, 
+**[variables.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/variables.md)**     Переменные
 
-4. **[print.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/print.md)**  
-   Функция `print()`
+**[input.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/input.md)**    Методы получения ввода от пользователя, 
+
+**[print.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/print.md)**     Функция `print()`
+
+**[print.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/function.md)**     Функция `print()`
+
