@@ -50,6 +50,7 @@ my_project/
 ```python
 from pathlib import Path
 import sys
+from header import __root__
 
 # Определяем корневую директорию
 __root__ = set_project_root()
