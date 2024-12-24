@@ -1,9 +1,13 @@
-import google.generativeai as genai  # Импорт библиотеки для работы с Gemini
-import re  # Импорт библиотеки для работы с регулярными выражениями
-from pathlib import Path
-from header import __root__  # Импорт объекта __root__, содержащего абсолютный путь к корню проекта
-from dotenv import load_dotenv, set_key  # Импорт функции для сохранения переменной в .env
 import os
+import re  # Импорт библиотеки для работы с регулярными выражениями
+import json
+
+from pathlib import Path
+from dotenv import load_dotenv, set_key  # Импорт функции для сохранения переменной в .env
+
+import google.generativeai as genai  # Импорт библиотеки для работы с Gemini
+from header import __root__  # Импорт объекта __root__, содержащего абсолютный путь к корню проекта
+
 
 # Загрузка переменных окружения из файла .env
 load_dotenv()
@@ -55,6 +59,7 @@ class GoogleGenerativeAI:
 if __name__ == '__main__':
     relative_path: Path = Path('GAMES', 'AI', 'BANNER_AI')  # Относительный путь к директории
     base_path: Path = __root__ / relative_path  # Абсолютный путь к директории с использованием __root__
+
 
     # Чтение API ключа из переменных окружения или запрос у пользователя
     API_KEY: str = os.getenv('API_KEY')
