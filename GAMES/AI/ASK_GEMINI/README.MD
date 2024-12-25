@@ -1,13 +1,8 @@
 ### Задай вопрос модели Gemini
 
-Современный мир программирования невозможно представить без искусственного интеллекта. 
-Этот пример показывает, как легко можно интегрировать AI в свои проекты и использовать его для решения задач. 
-Не забывай, что даже в эпоху AI ваш код должен быть чистым, понятным и хорошо документированным. 
+Для работы потребуется ключ API ключ
 
-
-
-
-API КЛЮЧ К МОДЕЛИ ЗДЕСЬ: [https://aistudio.google.com/](https://aistudio.google.com/) 
+API КЛЮЧ К МОДЕЛИ МОЖНО ПОЛУЧИТЬ ЗДЕСЬ: [https://aistudio.google.com/](https://aistudio.google.com/) 
 
 
 
@@ -56,7 +51,7 @@ class GoogleGenerativeAI:
             return f"Error: {str(ex)}"
 ```
 
-### Как это работает?
+### Как работает этот код
 
 1. **Импорт библиотеки**: Мы импортируем библиотеку `google.generativeai`, которая предоставляет интерфейс для взаимодействия с моделями Google AI.
 
@@ -102,4 +97,4 @@ API ключ от `gemini`: ваш_api_ключ
 ```
 
 
-Запустить код можно [здесь](https://colab.research.google.com/github/hypo69/101_python_computer_games_ru/blob/master/GAMES/ASK_GEMINI/ask_gemini_ru.ipynb)
+Запустить код можно [здесь](https://colab.research.google.com/github/hypo69/101_python_computer_games_ru/blob/master/GAMES/AI/ASK_GEMINI/ask_gemini_ru.ipynb)
