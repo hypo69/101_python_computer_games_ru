@@ -111,8 +111,15 @@ s6 = u'Привет, мир!'
 
 **Пример:**  
 ```python
-s7 = b'Hello, world!'
-print(s7)  # b'Hello, world!'
+# Байтовая строка, представляющая заголовок PNG-файла
+image_bytes = b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR'
+
+# Проверка, что данные соответствуют формату PNG
+if image_bytes.startswith(b'\x89PNG'):
+    print('Это PNG-изображение.')
+else:
+    print('Неизвестный формат.')
+
 ```
 
 ---
