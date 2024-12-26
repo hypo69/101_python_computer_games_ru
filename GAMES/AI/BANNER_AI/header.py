@@ -9,7 +9,7 @@
 import sys
 from pathlib import Path
 
-def set_project_root(marker_files=('pyproject.toml', 'requirements.txt', '.git')) -> Path:
+def set_project_root(marker_files:tuple=('__root__','pyproject.toml', 'requirements.txt', '.git')) -> Path:
     """
     Находит корневую директорию проекта, начиная с текущей директории файла,
     и поднимаясь вверх, пока не найдет один из маркерных файлов.
@@ -33,5 +33,5 @@ def set_project_root(marker_files=('pyproject.toml', 'requirements.txt', '.git')
 
 
 # Получение корневой директории проекта
-__root__: Path = set_project_root()
+__root__: Path = set_project_root(('__root__'))
 """__root__ (Path): Путь к корневой директории проекта"""
