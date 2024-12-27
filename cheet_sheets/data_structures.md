@@ -3,46 +3,39 @@
 
 *   **Определение:** Списки в Python – это упорядоченные, изменяемые коллекции элементов. Это значит, что ты можешь добавлять, удалять и изменять элементы в списке, и порядок элементов имеет значение.
 *   **Представление:** Списки создаются с помощью квадратных скобок `[]`, а элементы разделяются запятыми.
-    ```python
-    my_list = [1, 2, 3, "apple", "banana", True]
-    ```
-*   **Особенности:**
-    *   Могут содержать элементы разных типов данных (числа, строки, булевы значения, другие списки и т.д.).
-    *   Поддерживают индексацию (доступ к элементу по его позиции, начиная с 0).
-    *   Изменяемые (mutable).
 
 *   **Примеры:**
 
     ```python
     # Создание списка
-    boris_list = [1, 2, 3, "apple", "banana"]
+    boris_list = ["Борис", "Москва", 30, "инженер"]
     print(f"Создание списка: {boris_list}")
 
     # Доступ по индексу
-    print(f"Элемент по индексу 1: {boris_list[1]}")
+    print(f"Элемент по индексу 0: {boris_list[0]}")
 
     # Изменение элемента
-    boris_list[0] = 0
+    boris_list[2] = 31
     print(f"Изменение элемента: {boris_list}")
 
     # Добавление элемента в конец
-    boris_list.append("orange")
+    boris_list.append("женат")
     print(f"Добавление в конец: {boris_list}")
 
     # Вставка элемента по индексу
-    boris_list.insert(2, "kiwi")
+    boris_list.insert(1, "Россия")
     print(f"Вставка элемента: {boris_list}")
 
     # Удаление элемента по значению
-    boris_list.remove("banana")
+    boris_list.remove("инженер")
     print(f"Удаление элемента по значению: {boris_list}")
 
     # Удаление элемента по индексу
-    del boris_list[1]
+    del boris_list[2]
     print(f"Удаление элемента по индексу: {boris_list}")
 
-    # Расширение списка другим списком
-    boris_list.extend([7, 8])
+   # Расширение списка другим списком
+    boris_list.extend(["хобби", "рыбалка"])
     print(f"Расширение списка: {boris_list}")
 
     # Удаление элемента с конца
@@ -54,19 +47,11 @@
 
 *   **Определение:** Словари в Python – это неупорядоченные коллекции элементов, где каждый элемент состоит из пары "ключ-значение".
 *   **Представление:** Словари создаются с помощью фигурных скобок `{}`, а пары "ключ-значение" разделяются двоеточием `:`.
-    ```python
-    alice_dict = {"name": "Alice", "age": 25, "city": "London"}
-    ```
-*   **Особенности:**
-    *   Ключи должны быть уникальными и неизменяемыми (обычно строки или числа), а значения могут быть любого типа.
-    *   Доступ к значениям осуществляется по ключу.
-    *   Изменяемые (mutable).
-    *   Неупорядоченные (порядок может не сохранятся)
 
 *   **Примеры:**
     ```python
     # Создание словаря
-    alice_dict = {"name": "Alice", "age": 25, "city": "London"}
+    alice_dict = {"name": "Алиса", "age": 25, "city": "Лондон", "occupation": "художница"}
     print(f"Создание словаря: {alice_dict}")
 
     # Доступ по ключу
@@ -77,7 +62,7 @@
     print(f"Изменение значения: {alice_dict}")
 
     # Добавление пары ключ-значение
-    alice_dict["occupation"] = "artist"
+    alice_dict["hobby"] = "рисование"
     print(f"Добавление пары: {alice_dict}")
 
     # Удаление пары по ключу
@@ -85,8 +70,8 @@
     print(f"Удаление пары: {alice_dict}")
 
     # Удаление пары методом pop (с возвращением значения)
-    occupation = alice_dict.pop("occupation")
-    print(f"Удаление с возвратом значения: {alice_dict}, значение: {occupation}")
+    hobby = alice_dict.pop("hobby")
+    print(f"Удаление с возвратом значения: {alice_dict}, значение: {hobby}")
 
     # Проверка наличия ключа
     print(f"Наличие ключа 'name': {'name' in alice_dict}")
@@ -96,27 +81,19 @@
 
 *   **Определение:** Кортежи в Python – это упорядоченные, **неизменяемые** коллекции элементов.
 *   **Представление:** Кортежи создаются с помощью круглых скобок `()`, а элементы разделяются запятыми.
-    ```python
-    boris_tuple = (1, 2, 3, "apple", "banana", True)
-    ```
-*   **Особенности:**
-    *   Аналогичны спискам, но являются неизменяемыми (immutable), то есть нельзя изменить элементы после создания кортежа.
-    *   Могут содержать элементы разных типов данных.
-    *   Поддерживают индексацию.
-    *   Используются для представления неизменяемых последовательностей.
 
 *   **Примеры:**
 
     ```python
     # Создание кортежа
-    boris_tuple = (1, 2, 3, "apple", "banana")
+    boris_tuple = ("Борис", "Москва", 30, "инженер")
     print(f"Создание кортежа: {boris_tuple}")
 
     # Доступ по индексу
     print(f"Элемент по индексу 2: {boris_tuple[2]}")
 
     # Нельзя изменить элемент
-    # boris_tuple[0] = 0  # Это вызовет ошибку: TypeError: 'tuple' object does not support item assignment
+    # boris_tuple[0] = "Борис" # Это вызовет ошибку: TypeError: 'tuple' object does not support item assignment
 
     # Нельзя добавить элемент
     # boris_tuple.append(4) # Это вызовет ошибку: AttributeError: 'tuple' object has no attribute 'append'
@@ -132,7 +109,7 @@
      ```python
     from types import SimpleNamespace
 
-    alice_namespace = SimpleNamespace(name="Alice", age=25, city="London")
+    alice_namespace = SimpleNamespace(name="Алиса", age=25, city="Лондон")
     ```
 *  **Особенности:**
     *  Позволяет создавать объекты с динамическими атрибутами (похоже на словарь).
@@ -146,7 +123,7 @@
     from types import SimpleNamespace
 
     # Создание SimpleNamespace
-    alice_namespace = SimpleNamespace(name="Alice", age=25, city="London")
+    alice_namespace = SimpleNamespace(name="Алиса", age=25, city="Лондон")
     print(f"Создание SimpleNamespace: {alice_namespace}")
 
     # Доступ к атрибуту
@@ -157,40 +134,13 @@
     print(f"Изменение атрибута: {alice_namespace}")
 
     # Нельзя добавить новый атрибут
-    # alice_namespace.occupation = "artist" # Это вызовет ошибку: AttributeError: 'SimpleNamespace' object has no attribute 'occupation'
+    # alice_namespace.occupation = "художница" # Это вызовет ошибку: AttributeError: 'SimpleNamespace' object has no attribute 'occupation'
 
-    # Нельзя удалить атрибут
-    # del alice_namespace.age  # Это вызовет ошибку: AttributeError: age
-
-    # Добавление через setattr
-    setattr(alice_namespace, "occupation", "artist")
+   # Добавление через setattr
+    setattr(alice_namespace, "occupation", "художница")
     print(f"Добавление атрибута: {alice_namespace}")
 
     # Удаление через delattr
     delattr(alice_namespace, "city")
     print(f"Удаление атрибута: {alice_namespace}")
     ```
-
-**5. Другие структуры данных в Python:**
-
-*   **Множества (Sets):**
-    *   Неупорядоченные коллекции уникальных элементов.
-    *   Представление: `{1, 2, 3, "apple"}`
-    *   Изменяемые.
-*   **Строки (Strings):**
-    *   Последовательность символов.
-    *   Представление: `"hello"`, `'world'`
-    *   Неизменяемые (immutable).
-    *   Поддерживают индексацию и многие другие операции.
-*   **Байтовые массивы (Bytearrays):**
-    *  Изменяемая последовательность байтов.
-    *  Представление: `bytearray(b"hello")`
-    *  Используются для работы с двоичными данными.
-*   **Диапазоны (Ranges):**
-    *   Последовательность целых чисел.
-    *   Представление: `range(10)`, `range(1, 10, 2)`
-    *   Неизменяемые.
-    *   Используются для генерации последовательностей.
-*   **Frozen sets (неизменяемые множества)**
-    *   Неизменяемая версия множеств (sets).
-    *  Представление `frozenset([1, 2, 3])`
