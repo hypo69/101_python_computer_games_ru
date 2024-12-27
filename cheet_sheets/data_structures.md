@@ -11,6 +11,45 @@
     *   Поддерживают индексацию (доступ к элементу по его позиции, начиная с 0).
     *   Изменяемые (mutable).
 
+*   **Примеры:**
+
+    ```python
+    # Создание списка
+    my_list = [1, 2, 3, "apple", "banana"]
+    print(f"Создание списка: {my_list}")
+
+    # Доступ по индексу
+    print(f"Элемент по индексу 1: {my_list[1]}")
+
+    # Изменение элемента
+    my_list[0] = 0
+    print(f"Изменение элемента: {my_list}")
+
+    # Добавление элемента в конец
+    my_list.append("orange")
+    print(f"Добавление в конец: {my_list}")
+
+    # Вставка элемента по индексу
+    my_list.insert(2, "kiwi")
+    print(f"Вставка элемента: {my_list}")
+
+    # Удаление элемента по значению
+    my_list.remove("banana")
+    print(f"Удаление элемента по значению: {my_list}")
+
+    # Удаление элемента по индексу
+    del my_list[1]
+    print(f"Удаление элемента по индексу: {my_list}")
+
+    # Расширение списка другим списком
+    my_list.extend([7, 8])
+    print(f"Расширение списка: {my_list}")
+
+    # Удаление элемента с конца
+    my_list.pop()
+    print(f"Удаление элемента с конца: {my_list}")
+    ```
+
 **2. Словари (Dictionaries)**
 
 *   **Определение:** Словари в Python – это неупорядоченные коллекции элементов, где каждый элемент состоит из пары "ключ-значение".
@@ -24,6 +63,35 @@
     *   Изменяемые (mutable).
     *   Неупорядоченные (порядок может не сохранятся)
 
+*   **Примеры:**
+    ```python
+    # Создание словаря
+    my_dict = {"name": "John", "age": 30, "city": "New York"}
+    print(f"Создание словаря: {my_dict}")
+
+    # Доступ по ключу
+    print(f"Значение по ключу 'name': {my_dict['name']}")
+
+    # Изменение значения
+    my_dict["age"] = 31
+    print(f"Изменение значения: {my_dict}")
+
+    # Добавление пары ключ-значение
+    my_dict["occupation"] = "engineer"
+    print(f"Добавление пары: {my_dict}")
+
+    # Удаление пары по ключу
+    del my_dict["city"]
+    print(f"Удаление пары: {my_dict}")
+
+    # Удаление пары методом pop (с возвращением значения)
+    occupation = my_dict.pop("occupation")
+    print(f"Удаление с возвратом значения: {my_dict}, значение: {occupation}")
+
+    # Проверка наличия ключа
+    print(f"Наличие ключа 'name': {'name' in my_dict}")
+    ```
+
 **3. Кортежи (Tuples)**
 
 *   **Определение:** Кортежи в Python – это упорядоченные, **неизменяемые** коллекции элементов.
@@ -36,6 +104,25 @@
     *   Могут содержать элементы разных типов данных.
     *   Поддерживают индексацию.
     *   Используются для представления неизменяемых последовательностей.
+*   **Примеры:**
+
+    ```python
+    # Создание кортежа
+    my_tuple = (1, 2, 3, "apple", "banana")
+    print(f"Создание кортежа: {my_tuple}")
+
+    # Доступ по индексу
+    print(f"Элемент по индексу 2: {my_tuple[2]}")
+
+    # Нельзя изменить элемент
+    # my_tuple[0] = 0  # Это вызовет ошибку: TypeError: 'tuple' object does not support item assignment
+
+    # Нельзя добавить элемент
+    # my_tuple.append(4) # Это вызовет ошибку: AttributeError: 'tuple' object has no attribute 'append'
+
+    # Нельзя удалить элемент
+    # del my_tuple[0]  # Это вызовет ошибку: TypeError: 'tuple' object doesn't support item deletion
+    ```
 
 **4. SimpleNamespace**
 
@@ -43,7 +130,7 @@
 *   **Представление:** Для создания объекта `SimpleNamespace` нужно импортировать его из `types` и передать в него именованные аргументы (или не передать их):
      ```python
     from types import SimpleNamespace
-    
+
     my_namespace = SimpleNamespace(name="John", age=30, city="New York")
     ```
 *  **Особенности:**
@@ -53,9 +140,39 @@
     *  В отличие от словарей, порядок атрибутов сохраняется.
     *  Поля можно менять, но нельзя добавлять новые поля
 
+*  **Примеры:**
+    ```python
+    from types import SimpleNamespace
+
+    # Создание SimpleNamespace
+    my_namespace = SimpleNamespace(name="John", age=30, city="New York")
+    print(f"Создание SimpleNamespace: {my_namespace}")
+
+    # Доступ к атрибуту
+    print(f"Атрибут 'name': {my_namespace.name}")
+
+    # Изменение атрибута
+    my_namespace.age = 31
+    print(f"Изменение атрибута: {my_namespace}")
+
+    # Нельзя добавить новый атрибут
+    # my_namespace.occupation = "engineer" # Это вызовет ошибку: AttributeError: 'SimpleNamespace' object has no attribute 'occupation'
+
+    # Нельзя удалить атрибут
+    # del my_namespace.age  # Это вызовет ошибку: AttributeError: age
+
+    # Добавление через setattr
+    setattr(my_namespace, "occupation", "engineer")
+    print(f"Добавление атрибута: {my_namespace}")
+
+    # Удаление через delattr
+    delattr(my_namespace, "city")
+    print(f"Удаление атрибута: {my_namespace}")
+    ```
+
 **5. Другие структуры данных в Python:**
 
-*   **Множества (Sets):** (Мы их уже изучали)
+*   **Множества (Sets):**
     *   Неупорядоченные коллекции уникальных элементов.
     *   Представление: `{1, 2, 3, "apple"}`
     *   Изменяемые.
@@ -77,40 +194,4 @@
     *   Неизменяемая версия множеств (sets).
     *  Представление `frozenset([1, 2, 3])`
 
-**Примеры:**
-
-```python
-from types import SimpleNamespace
-
-# Списки
-my_list = [1, 2, 3, "apple", "banana"]
-print(f"Список: {my_list}, элемент по индексу 1: {my_list[1]}")
-
-# Словари
-my_dict = {"name": "John", "age": 30, "city": "New York"}
-print(f"Словарь: {my_dict}, значение по ключу 'name': {my_dict['name']}")
-
-# Кортежи
-my_tuple = (1, 2, 3, "apple", "banana")
-print(f"Кортеж: {my_tuple}, элемент по индексу 2: {my_tuple[2]}")
-
-# SimpleNamespace
-my_namespace = SimpleNamespace(name="John", age=30, city="New York")
-print(f"SimpleNamespace: {my_namespace}, значение атрибута 'name': {my_namespace.name}")
-
-# Множества
-my_set = {1, 2, 3, "apple"}
-print(f"Множество: {my_set}")
-```
-
-**Ключевые отличия:**
-
-*   **Изменяемость (Mutability):**
-    *   Списки, словари, множества и `SimpleNamespace` - изменяемые.
-    *   Кортежи и строки - неизменяемые.
-*   **Упорядоченность (Order):**
-    *   Списки и кортежи – упорядоченные.
-    *   Словари и множества – неупорядоченные (порядок не гарантируется, но `SimpleNamespace` сохраняет порядок)
-*   **Ключи/Значения:**
-    *   Словари используют пары ключ-значение.
-    *   Остальные структуры хранят только значения.
+Поскольку эти структуры данных отличаются по своему назначению, я не буду приводить примеры для каждой из них на все операции, так как некоторые из них не применимы.
