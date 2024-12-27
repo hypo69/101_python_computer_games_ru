@@ -15,39 +15,39 @@
 
     ```python
     # Создание списка
-    my_list = [1, 2, 3, "apple", "banana"]
-    print(f"Создание списка: {my_list}")
+    boris_list = [1, 2, 3, "apple", "banana"]
+    print(f"Создание списка: {boris_list}")
 
     # Доступ по индексу
-    print(f"Элемент по индексу 1: {my_list[1]}")
+    print(f"Элемент по индексу 1: {boris_list[1]}")
 
     # Изменение элемента
-    my_list[0] = 0
-    print(f"Изменение элемента: {my_list}")
+    boris_list[0] = 0
+    print(f"Изменение элемента: {boris_list}")
 
     # Добавление элемента в конец
-    my_list.append("orange")
-    print(f"Добавление в конец: {my_list}")
+    boris_list.append("orange")
+    print(f"Добавление в конец: {boris_list}")
 
     # Вставка элемента по индексу
-    my_list.insert(2, "kiwi")
-    print(f"Вставка элемента: {my_list}")
+    boris_list.insert(2, "kiwi")
+    print(f"Вставка элемента: {boris_list}")
 
     # Удаление элемента по значению
-    my_list.remove("banana")
-    print(f"Удаление элемента по значению: {my_list}")
+    boris_list.remove("banana")
+    print(f"Удаление элемента по значению: {boris_list}")
 
     # Удаление элемента по индексу
-    del my_list[1]
-    print(f"Удаление элемента по индексу: {my_list}")
+    del boris_list[1]
+    print(f"Удаление элемента по индексу: {boris_list}")
 
     # Расширение списка другим списком
-    my_list.extend([7, 8])
-    print(f"Расширение списка: {my_list}")
+    boris_list.extend([7, 8])
+    print(f"Расширение списка: {boris_list}")
 
     # Удаление элемента с конца
-    my_list.pop()
-    print(f"Удаление элемента с конца: {my_list}")
+    boris_list.pop()
+    print(f"Удаление элемента с конца: {boris_list}")
     ```
 
 **2. Словари (Dictionaries)**
@@ -55,7 +55,7 @@
 *   **Определение:** Словари в Python – это неупорядоченные коллекции элементов, где каждый элемент состоит из пары "ключ-значение".
 *   **Представление:** Словари создаются с помощью фигурных скобок `{}`, а пары "ключ-значение" разделяются двоеточием `:`.
     ```python
-    my_dict = {"name": "John", "age": 30, "city": "New York"}
+    alice_dict = {"name": "Alice", "age": 25, "city": "London"}
     ```
 *   **Особенности:**
     *   Ключи должны быть уникальными и неизменяемыми (обычно строки или числа), а значения могут быть любого типа.
@@ -66,30 +66,30 @@
 *   **Примеры:**
     ```python
     # Создание словаря
-    my_dict = {"name": "John", "age": 30, "city": "New York"}
-    print(f"Создание словаря: {my_dict}")
+    alice_dict = {"name": "Alice", "age": 25, "city": "London"}
+    print(f"Создание словаря: {alice_dict}")
 
     # Доступ по ключу
-    print(f"Значение по ключу 'name': {my_dict['name']}")
+    print(f"Значение по ключу 'name': {alice_dict['name']}")
 
     # Изменение значения
-    my_dict["age"] = 31
-    print(f"Изменение значения: {my_dict}")
+    alice_dict["age"] = 26
+    print(f"Изменение значения: {alice_dict}")
 
     # Добавление пары ключ-значение
-    my_dict["occupation"] = "engineer"
-    print(f"Добавление пары: {my_dict}")
+    alice_dict["occupation"] = "artist"
+    print(f"Добавление пары: {alice_dict}")
 
     # Удаление пары по ключу
-    del my_dict["city"]
-    print(f"Удаление пары: {my_dict}")
+    del alice_dict["city"]
+    print(f"Удаление пары: {alice_dict}")
 
     # Удаление пары методом pop (с возвращением значения)
-    occupation = my_dict.pop("occupation")
-    print(f"Удаление с возвратом значения: {my_dict}, значение: {occupation}")
+    occupation = alice_dict.pop("occupation")
+    print(f"Удаление с возвратом значения: {alice_dict}, значение: {occupation}")
 
     # Проверка наличия ключа
-    print(f"Наличие ключа 'name': {'name' in my_dict}")
+    print(f"Наличие ключа 'name': {'name' in alice_dict}")
     ```
 
 **3. Кортежи (Tuples)**
@@ -97,31 +97,32 @@
 *   **Определение:** Кортежи в Python – это упорядоченные, **неизменяемые** коллекции элементов.
 *   **Представление:** Кортежи создаются с помощью круглых скобок `()`, а элементы разделяются запятыми.
     ```python
-    my_tuple = (1, 2, 3, "apple", "banana", True)
+    boris_tuple = (1, 2, 3, "apple", "banana", True)
     ```
 *   **Особенности:**
     *   Аналогичны спискам, но являются неизменяемыми (immutable), то есть нельзя изменить элементы после создания кортежа.
     *   Могут содержать элементы разных типов данных.
     *   Поддерживают индексацию.
     *   Используются для представления неизменяемых последовательностей.
+
 *   **Примеры:**
 
     ```python
     # Создание кортежа
-    my_tuple = (1, 2, 3, "apple", "banana")
-    print(f"Создание кортежа: {my_tuple}")
+    boris_tuple = (1, 2, 3, "apple", "banana")
+    print(f"Создание кортежа: {boris_tuple}")
 
     # Доступ по индексу
-    print(f"Элемент по индексу 2: {my_tuple[2]}")
+    print(f"Элемент по индексу 2: {boris_tuple[2]}")
 
     # Нельзя изменить элемент
-    # my_tuple[0] = 0  # Это вызовет ошибку: TypeError: 'tuple' object does not support item assignment
+    # boris_tuple[0] = 0  # Это вызовет ошибку: TypeError: 'tuple' object does not support item assignment
 
     # Нельзя добавить элемент
-    # my_tuple.append(4) # Это вызовет ошибку: AttributeError: 'tuple' object has no attribute 'append'
+    # boris_tuple.append(4) # Это вызовет ошибку: AttributeError: 'tuple' object has no attribute 'append'
 
     # Нельзя удалить элемент
-    # del my_tuple[0]  # Это вызовет ошибку: TypeError: 'tuple' object doesn't support item deletion
+    # del boris_tuple[0]  # Это вызовет ошибку: TypeError: 'tuple' object doesn't support item deletion
     ```
 
 **4. SimpleNamespace**
@@ -131,12 +132,12 @@
      ```python
     from types import SimpleNamespace
 
-    my_namespace = SimpleNamespace(name="John", age=30, city="New York")
+    alice_namespace = SimpleNamespace(name="Alice", age=25, city="London")
     ```
 *  **Особенности:**
     *  Позволяет создавать объекты с динамическими атрибутами (похоже на словарь).
     *  Удобен для создания простых объектов для хранения данных.
-    *  Атрибуты доступны через точку, как у обычных объектов: `my_namespace.name`
+    *  Атрибуты доступны через точку, как у обычных объектов: `alice_namespace.name`
     *  В отличие от словарей, порядок атрибутов сохраняется.
     *  Поля можно менять, но нельзя добавлять новые поля
 
@@ -145,29 +146,29 @@
     from types import SimpleNamespace
 
     # Создание SimpleNamespace
-    my_namespace = SimpleNamespace(name="John", age=30, city="New York")
-    print(f"Создание SimpleNamespace: {my_namespace}")
+    alice_namespace = SimpleNamespace(name="Alice", age=25, city="London")
+    print(f"Создание SimpleNamespace: {alice_namespace}")
 
     # Доступ к атрибуту
-    print(f"Атрибут 'name': {my_namespace.name}")
+    print(f"Атрибут 'name': {alice_namespace.name}")
 
     # Изменение атрибута
-    my_namespace.age = 31
-    print(f"Изменение атрибута: {my_namespace}")
+    alice_namespace.age = 26
+    print(f"Изменение атрибута: {alice_namespace}")
 
     # Нельзя добавить новый атрибут
-    # my_namespace.occupation = "engineer" # Это вызовет ошибку: AttributeError: 'SimpleNamespace' object has no attribute 'occupation'
+    # alice_namespace.occupation = "artist" # Это вызовет ошибку: AttributeError: 'SimpleNamespace' object has no attribute 'occupation'
 
     # Нельзя удалить атрибут
-    # del my_namespace.age  # Это вызовет ошибку: AttributeError: age
+    # del alice_namespace.age  # Это вызовет ошибку: AttributeError: age
 
     # Добавление через setattr
-    setattr(my_namespace, "occupation", "engineer")
-    print(f"Добавление атрибута: {my_namespace}")
+    setattr(alice_namespace, "occupation", "artist")
+    print(f"Добавление атрибута: {alice_namespace}")
 
     # Удаление через delattr
-    delattr(my_namespace, "city")
-    print(f"Удаление атрибута: {my_namespace}")
+    delattr(alice_namespace, "city")
+    print(f"Удаление атрибута: {alice_namespace}")
     ```
 
 **5. Другие структуры данных в Python:**
@@ -193,5 +194,3 @@
 *   **Frozen sets (неизменяемые множества)**
     *   Неизменяемая версия множеств (sets).
     *  Представление `frozenset([1, 2, 3])`
-
-Поскольку эти структуры данных отличаются по своему назначению, я не буду приводить примеры для каждой из них на все операции, так как некоторые из них не применимы.
