@@ -66,6 +66,7 @@
 3. **Экспоненциальная функция с другим основанием**:  
    \( f(n) = 3^n \)  
    Пример: время выполнения алгоритма, который исследует все возможные комбинации.
+
 [f(n) = 2^n](https://www.desmos.com/calculator/iwonxpeodf?lang=ru)
 
 [f(n) = n!](https://www.desmos.com/calculator/ffafxvxm3b?lang=ru)
