@@ -38,7 +38,7 @@
 
 [f(n) = n^2](https://www.desmos.com/calculator/2svx1ifaze?lang=ru)
 
-[f(n) = log n](https://www.desmos.com/calculator/avzphapdrx?lang=ru)
+[f(n) = log n](https://www.desmos.com/calculator/clyuujpm8k?lang=ru)
 
 ---
 
