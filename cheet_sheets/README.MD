@@ -9,6 +9,7 @@
 - Функция: [function.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/function.md)  
 - Классы: [class.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/class.md)
 - Синглтон [singleton.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/singleton.md.md)  
+- Dataclass[dataclass.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/dataclass.md.md)  
 - Импорты библиотек и модулей: [imports.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/imports.md)  
 - Методы получения ввода: [input.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/input.md)  
 - Функция `print()`: [print.md](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets/print.md)  
