@@ -176,4 +176,4 @@ print(my_car.get_make())  # Вывод: Honda
 
  ---
 
-  [К оглавлению](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheet_sheets#readme)
+  [К оглавлению](https://github.com/hypo69/101_python_computer_games_ru/blob/master/cheat_sheets#readme)
